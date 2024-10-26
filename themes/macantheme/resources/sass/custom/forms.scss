@@ -1,0 +1,65 @@
+#frm_form_3_container * {
+  font-family: 'Yekan-en', 'Yekan'!important;
+  direction: ltr !important;
+}
+
+.frm_pos_top.frm_section_spacing {
+  @extend .text-start, .text-white;
+}
+
+.frm_repeat_buttons {
+  @extend .text-start;
+}
+
+.frm_icon_font.frm_plus_icon:before {
+  content: "\f4fe" !important;
+  font-style: normal !important;
+  font-size: 20px !important;
+  font-family: bootstrap-icons !important;
+}
+.frm_style_formidable-style.with_frm_style .frm_icon_font.frm_minus_icon:before{
+  content: "\f2ea" !important;
+  font-style: normal !important;
+  font-size: 20px !important;
+  font-family: bootstrap-icons !important;
+}
+.with_frm_style .frm_button{
+  background-color: transparent!important;
+  border: none!important;
+}
+.form-item.active-from{
+  position: relative;
+  background-color: #1b4f76;
+}
+.form-navbar .form-item:nth-child(1).active-from:after{
+  right: 0;
+  bottom: 0;
+  content: "\A";
+  border-style: solid;
+  border-width: 23px 0 23px 27px;
+  border-color: transparent transparent transparent #1b4f76;
+  position: absolute;
+  left: 100%;
+}
+.frm_forms.frm_style_formidable-style.with_frm_style {
+  background-color: #287fbfcf !important;
+}
+.form-navbar .form-item:nth-child(2).active-from:after {
+  left: 0;
+  bottom: 0;
+  content: "\a";
+  border-style: solid;
+  border-width: 23px 0 23px 27px;
+  border-color: transparent transparent transparent #246b9f;
+  position: absolute;
+  right: 100%;
+}
+.frm_section_heading, #frm_field_18_container, .with_frm_style .frm_submit, #frm_field_64_container {
+  width: 98% !important;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.frm_style_formidable-style.with_frm_style .frm-show-form .frm_section_heading h3 {
+  @extend .border-0;
+}

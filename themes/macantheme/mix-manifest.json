@@ -1,0 +1,17 @@
+{
+    "/public/js/app.js": "/public/js/app.js",
+    "/public/js/homepage/app.js": "/public/js/homepage/app.js",
+    "/public/js/landing.js": "/public/js/landing.js",
+    "/public/js/blog/app.js": "/public/js/blog/app.js",
+    "/public/js/single-blog/app.js": "/public/js/single-blog/app.js",
+    "/public/js/single-portfolio/app.js": "/public/js/single-portfolio/app.js",
+    "/public/css/bootstrap-icons.css": "/public/css/bootstrap-icons.css",
+    "/public/css/ltr.css": "/public/css/ltr.css",
+    "/public/css/portfolios.css": "/public/css/portfolios.css",
+    "/public/css/blog.css": "/public/css/blog.css",
+    "/public/css/aboutPage.css": "/public/css/aboutPage.css",
+    "/public/css/style.css": "/public/css/style.css",
+    "/public/images/ipad.png": "/public/images/ipad.png",
+    "/public/images/iphone.png": "/public/images/iphone.png",
+    "/public/images/macbook.png": "/public/images/macbook.png"
+}

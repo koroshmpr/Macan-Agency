@@ -1,0 +1,11 @@
+@font-face {
+    font-family: "Macan-ic";
+    src: url('Macan-ic.eot');
+    src: url('Macan-ic.eot?#iefix') format('eot'),
+    url('Macan-ic.woff') format('woff'),
+    url('Macan-ic.ttf') format('ttf'),
+    url('Macan-ic.svg') format('svg');
+    font-weight: 400;
+    font-display: swap;
+}
+
