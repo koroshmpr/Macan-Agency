@@ -47,7 +47,7 @@ $(document).ready(function () {
         let curPos = $(this).scrollTop();
 
         sectionsP.each(function () {
-            let top = $(this).offset().top - 50, // Adjust 50 to your needs
+            let top = $(this).offset().top - 150, // Adjust 50 to your needs
                 bottom = top + $(this).outerHeight();
 
             if (curPos >= top && curPos <= bottom) {

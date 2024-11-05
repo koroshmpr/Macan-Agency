@@ -1,6 +1,8 @@
 <?php get_header();
-
+global $lan;
+$lan = apply_filters('wpml_current_language', NULL);
 $url = $_SERVER["REQUEST_URI"];
+echo $lan;
 $slugEN = strpos($url, '/en/') !== false;
 
 
@@ -10,7 +12,7 @@ while (have_posts()) :
     <div class="position-fixed blog-progress w-100 z-1">
         <progress class="w-100 lazy" max="100" value="0"></progress>
     </div>
-    <section class="min-vh-100 <?php echo $slugEN ? 'lang-en' : ''; ?>">
+    <section class="min-vh-100 <?= $lan == 'en' ? 'lang-en' : ''; ?>">
         <div class="bg-danger" style="padding-top: 120px">
             <div class="custom-container d-flex flex-column justify-content-center align-items-start">
                 <?php
@@ -29,7 +31,7 @@ while (have_posts()) :
                         });
                     </script>
                 <?php } ?>
-                <h1 class="fs-4 text-white my-3 ff-yekan">
+                <h1 class="fs-4 text-white my-3 <?php echo $lan == 'en' ? '' : 'ff-yekan'; ?> ">
                     <?php the_title(); ?>
                 </h1>
                 <div class="d-inline-flex align-items-center gap-lg-3 gap-2 mb-3">
@@ -46,6 +48,22 @@ while (have_posts()) :
 
                         </span>
                         <div class="d-inline-flex flex-wrap text-white gap-1 gap-lg-3 align-items-center fw-lighter">
+                            <?php
+                            $current_language = apply_filters('wpml_current_language', null);
+
+                            function get_formatted_date_custom($format, $timestamp = null) {
+                                global $current_language;
+                                if ($current_language == 'fa') {
+                                    // Shamsi date format for Persian
+                                    return shamsi_date($format, $timestamp);
+                                } else {
+                                    // Gregorian date for English
+                                    return date($format, $timestamp);
+                                }
+                            }
+
+                            // Display the original post date
+                            ?>
                             <p class="d-flex gap-2 align-content-center mb-0" style="line-height:1.2">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
                                      class="bi bi-clock-history" viewBox="0 0 16 16">
@@ -53,85 +71,62 @@ while (have_posts()) :
                                     <path d="M8 1a7 7 0 1 0 4.95 11.95l.707.707A8.001 8.001 0 1 1 8 0z"/>
                                     <path d="M7.5 3a.5.5 0 0 1 .5.5v5.21l3.248 1.856a.5.5 0 0 1-.496.868l-3.5-2A.5.5 0 0 1 7 9V3.5a.5.5 0 0 1 .5-.5"/>
                                 </svg>
-                                <?php echo get_the_date('d  F , Y'); ?></p>
-                            <?php $updated_date = get_the_modified_date('d F, Y'); ?>
+                                <?php echo get_formatted_date_custom('d F, Y', strtotime(get_the_date('Y-m-d'))); ?>
+                            </p>
 
-                            <!--                            <p class="d-flex gap-1 align-content-center mb-0" style="line-height:1.2">-->
-                            <div class="dropdown d-flex align-items-center gap-1">
-                                <button class="btn p-1 rounded-circle text-white" type="button"
-                                        data-bs-toggle="dropdown" aria-expanded="false"
-                                        aria-labelledby="reversion-list">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                            <?php
+                            $post_id = get_the_ID();
+                            $updated_date = get_formatted_date_custom('d F, Y', strtotime(get_the_modified_date('Y-m-d')));
+
+                            // Display revisions dropdown with translated dates
+                            $revisions = wp_get_post_revisions($post_id);
+                            if ($revisions) {
+                                $unique_dates = [];
+
+                                foreach ($revisions as $revision) {
+                                    $revision_date = get_formatted_date_custom('d, F, Y', strtotime(get_the_modified_date('Y-m-d', $revision->ID)));
+                                    if (!in_array($revision_date, $unique_dates)) {
+                                        $unique_dates[] = $revision_date;
+                                    }
+                                }
+
+                                $created_date = get_formatted_date_custom('d, F, Y', strtotime(get_the_date('Y-m-d', $post_id)));
+                                $created_date_index = array_search($created_date, $unique_dates);
+                                if ($created_date_index !== false) {
+                                    unset($unique_dates[$created_date_index]);
+                                }
+
+                                sort($unique_dates);
+                                array_unshift($unique_dates, $created_date);
+
+                                echo '<div class="dropdown d-flex align-items-center gap-1">';
+                                echo '<button class="btn p-1 rounded-circle text-white" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-labelledby="reversion-list">';
+                                echo '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
                                          class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
                                         <path fill-rule="evenodd"
                                               d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z"/>
                                         <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466"/>
-                                    </svg>
-                                </button>
-                                <?php
-                                // Get post ID
-                                $post_id = get_the_ID();
-
-                                // Get all post revisions
-                                $revisions = wp_get_post_revisions($post_id);
-
-                                // Check if there are revisions
-                                if ($revisions) {
-                                    // Create an array to store unique dates
-                                    $unique_dates = array();
-
-                                    // Loop through each revision
-                                    foreach ($revisions as $revision) {
-                                        $revision_date = get_the_modified_date('d F, Y', $revision->ID);
-
-                                        // Check if the date is not already in the array
-                                        if (!in_array($revision_date, $unique_dates)) {
-                                            $unique_dates[] = $revision_date;
-                                        }
+                                    </svg>';
+                                echo '</button>';
+                                echo '<ul id="reversion-list" class="dropdown-menu dropdown-menu-dark">';
+                                foreach ($unique_dates as $index => $date) {
+                                    echo '<li class="dropdown-item">' . $date . '</li>';
+                                    if ($index == 0) {
+                                        echo '<li><hr class="dropdown-divider mt-0"></li>';
                                     }
-
-                                    // Get the post created date
-                                    $created_date = get_the_date('d F, Y', $post_id);
-
-                                    // Remove the created date from the array (if it exists)
-                                    $created_date_index = array_search($created_date, $unique_dates);
-                                    if ($created_date_index !== false) {
-                                        unset($unique_dates[$created_date_index]);
-                                    }
-
-                                    // Sort the other dates in ascending order (oldest first)
-                                    sort($unique_dates);
-
-                                    // Add the created date to the beginning of the array
-                                    array_unshift($unique_dates, $created_date);
-
-                                    // Get the last modified date
-                                    $last_modified_date = get_the_modified_date('d F, Y', $post_id);
-
-                                    // Remove any duplicate last modified date
-                                    $unique_dates = array_unique($unique_dates);
-
-                                    // Output the sorted and unique dates
-                                    echo '<ul id="reversion-list" class="dropdown-menu dropdown-menu-dark">';
-                                    foreach ($unique_dates as $index => $date) {
-                                        echo '<li class="dropdown-item">' . $date . '</li>';
-                                        if ($index == 0) {
-                                            echo '<li><hr class="dropdown-divider mt-0"></li>';
-                                        }
-                                    }
-                                    echo '</ul>';
-                                } else {
-                                    echo 'No revisions found.';
                                 }
-                                ?>
+                                echo '</ul>';
+                                echo $updated_date;
+                                echo '</div>';
+                            } else {
+                                echo 'No revisions found.';
+                            }
+                            ?>
 
-
-                                <?= $updated_date; ?></p>
-                            </div>
                             <div class="d-none d-md-inline vr bg-white opacity-100"></div>
 
-                            <span class="text-semi-light fs-6 ff-yekan">
-                                <?php echo $slugEN ? 'Reading Time : ' . reading_time() . ' mins' : 'مدت زمان مطالعه ' . reading_time() . ' دقیقه'; ?>
+                            <span class="text-semi-light fs-6 <?= $lan == 'en' ? '' : 'ff-yekan'; ?> ">
+                                <?= $lan == 'en' ? 'Reading Time : ' . reading_time() . ' mins' : 'مدت زمان مطالعه ' . reading_time() . ' دقیقه'; ?>
                             </span>
                         </div>
                     </div>
@@ -147,7 +142,7 @@ while (have_posts()) :
                     // Check if the image URL is available
                     if ($image_url) { ?>
                         <img class="object-fit-cover w-100" width="1300" height="600"
-                             src="<?php echo $image_url[0]; ?>" alt="<?= the_title(); ?>" title="<?= the_title(); ?>">
+                             src="<?= $image_url[0]; ?>" alt="<?= the_title(); ?>" title="<?= the_title(); ?>">
                     <?php } ?>
                 </div>
             </div>
@@ -156,11 +151,11 @@ while (have_posts()) :
             <div class="custom-container min-vh-100 position-relative">
                 <div class="row g-4 py-4 align-items-lg-start">
                     <div class="col-lg-3 col-12">
-                        <div class="sidebar-area shadow-sm bg-white <?php echo $slugEN ? '' : 'ps-4'; ?>">
-                            <p class="pt-3 fs-4 pb-0 mb-0 text-dark <?php echo $slugEN ? 'text-center' : 'text-start'; ?>">
-                                <?php echo $slugEN ? 'Table of Content' : 'فهرست'; ?>
+                        <div class="sidebar-area shadow-sm bg-white <?= $lan == 'en'  ? '' : 'ps-4'; ?>">
+                            <p class="pt-3 fs-4 pb-0 mb-0 text-dark <?= $lan == 'en'  ? 'text-center' : 'text-start'; ?>">
+                                <?= $lan == 'en'  ? 'Table of Content' : 'فهرست'; ?>
                             </p>
-                            <div class="<?php echo $slugEN ? 'px-5' : 'px-4'; ?>">
+                            <div class="<?= $lan == 'en'  ? 'px-5' : 'px-4'; ?>">
                                 <div class="d-flex align-items-center">
                                     <?php
                                     // Get the min-heading and max-heading values from the options
@@ -177,11 +172,11 @@ while (have_posts()) :
                         </div>
                     </div>
                     <article class="col-lg-9 col-12 text-justify text-dark lh-lg sidebar-container">
-                        <div class="content bg-white py-3 h-100 shadow-sm gx-0 <?php echo $slugEN ? 'pe-4' : 'pe-0'; ?>">
+                        <div class="content bg-white py-3 h-100 shadow-sm gx-0 <?= $lan == 'en'  ? 'pe-4' : 'pe-0'; ?>">
                             <div id="single-content">
                                 <?php the_content(); ?>
                             </div>
-                            <div class="text-center border-top border-1 border-danger mt-5 <?php echo $slugEN ? 'd-none' : ''; ?>">
+                            <div class="text-center border-top border-1 border-danger mt-5 <?= $lan == 'en'  ? 'd-none' : ''; ?>">
                                 <?php
                                 if (comments_open() || get_comments_number()) :
                                     comments_template();
@@ -198,7 +193,7 @@ while (have_posts()) :
             <div class="custom-container">
                 <div class="row justify-content-center align-items-stretch">
                     <div class="col-12 py-5">
-                        <p class="pb-lg-5 pb-2 text-dark text-center fs-3 fw-bolder"><?php echo $slugEN ? 'Related Posts' : 'مطالب مرتبط'; ?></p>
+                        <p class="pb-lg-5 pb-2 text-dark text-center fs-3 fw-bolder"><?= $lan == 'en'  ? 'Related Posts' : 'مطالب مرتبط'; ?></p>
                         <div class="row row-gap-4 gap-lg-0 pb-5 pb-lg-0">
                             <?php
                             // Get the current post ID
