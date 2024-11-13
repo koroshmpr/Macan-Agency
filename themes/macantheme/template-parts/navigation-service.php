@@ -13,43 +13,33 @@ $next_post = get_next_post();
 $next_post_id = $next_post ? $next_post->ID : '';
 global $lan;
 
-if ($lan == 'en'){
+if ($lan == 'en') {
     //    first Item in Farsi
-    if (empty($previous_post) && !empty($next_post)){
+    if (empty($previous_post) && !empty($next_post)) {
         $navigationStyle = 'flex-row-reverse justify-content-start';
         $flexDirectionPrev = 'flex-row-reverse';
-        $chevronPrev = 'right';
-    }
-    elseif (!empty($previous_post) && empty($next_post)){
+    } elseif (!empty($previous_post) && empty($next_post)) {
 //        last Item in Farsi
         $navigationStyle = 'flex-row-reverse justify-content-end';
         $flexDirectionNext = 'flex-row';
-        $chevronNext = 'left';
-    }else{
+    } else {
         $navigationStyle = 'flex-row justify-content-between';
         $flexDirectionNext = 'flex-row';
         $flexDirectionPrev = 'flex-row-reverse';
-        $chevronNext = 'left';
-        $chevronPrev = 'right';
     }
-}else{
+} else {
 //    first Item in Farsi
-    if (empty($previous_post) && !empty($next_post)){
+    if (empty($previous_post) && !empty($next_post)) {
         $navigationStyle = 'flex-row justify-content-end';
         $flexDirectionPrev = 'flex-row-reverse';
-        $chevronPrev = 'left';
-    }
-    elseif (!empty($previous_post) && empty($next_post)){
+    } elseif (!empty($previous_post) && empty($next_post)) {
 //        last Item in Farsi
         $navigationStyle = 'flex-row justify-content-start';
         $flexDirectionNext = 'flex-row';
-        $chevronNext = 'right';
-    }else{
+    } else {
         $navigationStyle = 'flex-row justify-content-between';
         $flexDirectionNext = 'flex-row';
         $flexDirectionPrev = 'flex-row-reverse';
-        $chevronNext = 'right';
-        $chevronPrev = 'left';
     }
 }
 
@@ -60,7 +50,16 @@ if ($lan == 'en'){
         ?>
         <a href="<?php echo get_permalink($previous_post_id); ?>"
            class="previous-post d-inline-flex text-end gap-1 align-items-center justify-content-center <?= $flexDirectionNext; ?>">
-            <i class="bi bi-chevron-<?= $chevronNext; ?> d-flex justify-content-center align-items-center"></i>
+            <?php if ($lan == 'fa') : ?>
+                <svg width="20" height="20" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                          d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/>
+                </svg>
+            <?php elseif ($lan == 'en') : ?>
+                <svg width="20" height="20" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"/>
+                </svg>
+            <?php endif; ?>
             <h6 class="mb-0 lh-base pt-1"><?php echo esc_html($prev_title); ?></h6>
         </a>
     <?php endif;
@@ -70,7 +69,16 @@ if ($lan == 'en'){
         ?>
         <a href="<?php echo get_permalink($next_post_id); ?>"
            class="next-post d-inline-flex text-end gap-1 align-items-center justify-content-center <?= $flexDirectionPrev; ?>">
-            <i class="bi bi-chevron-<?= $chevronPrev; ?> d-flex justify-content-center align-items-center"></i>
+            <?php if ($lan == 'en') : ?>
+                <svg width="20" height="20" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                          d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/>
+                </svg>
+            <?php elseif ($lan == 'fa') : ?>
+                <svg width="20" height="20" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"/>
+                </svg>
+            <?php endif; ?>
             <h6 class="mb-0 lh-base pt-1"><?php echo esc_html($next_title); ?></h6>
 
         </a>

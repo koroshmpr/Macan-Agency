@@ -9,6 +9,7 @@ mix.js('resources/js/blog/app.js', 'public/js/blog/app.js');
 mix.js('resources/js/single-blog/app.js', 'public/js/single-blog/app.js');
 mix.js('resources/js/single-portfolio/app.js', 'public/js/single-portfolio/app.js');
 mix.sass('resources/sass/custom/aboutPage.scss' , 'public/css/aboutPage.css');
+mix.sass('resources/sass/custom/single-post.scss' , 'public/css/single-post.css');
 mix.sass('resources/sass/custom/blog.scss' , 'public/css/blog.css');
 mix.sass('resources/sass/custom/portfolios.scss' , 'public/css/portfolios.css');
 mix.sass('resources/sass/ltr.scss', 'public/css')

@@ -135,8 +135,10 @@ document.addEventListener('DOMContentLoaded', function () {
         toggleScrollClass();
     });
     // menu modal
-    let backBtn = $('<i>').addClass('bi bi-arrow-right-short back-button');
-    let liElement = $('<li>').append(backBtn);
+    let backBtn = $('<svg width="30" height="30" fill="currentColor" class="bi bi-arrow-right-short back-button" viewBox="0 0 16 16">\n' +
+        '  <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/>\n' +
+        '</svg>');
+    let liElement = $('<li class="d-flex justify-content-center">').append(backBtn);
     $('#navbarTogglerMenu .sub-menu').append(liElement);
 
     const myModalEl = document.getElementById('headerModal');

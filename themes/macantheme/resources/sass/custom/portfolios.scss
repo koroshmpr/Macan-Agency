@@ -136,3 +136,55 @@
     }
   }
 }
+@media (max-width: 1140px) {
+  .single-portfolio .min-vh-75{
+    min-height: 85vh!important;
+  }
+  .mac:after{
+    width: 13%!important;
+    height: 9px!important;
+  }
+  .mac {
+    top:26%!important;
+    right: 0!important;
+    width: 100%!important;
+    height: auto!important;
+    img {
+      width: 100%!important;
+      padding: 0 20px!important;
+    }
+    .imgBX{
+      top: 5px!important;
+      left: 50%!important;
+      width: calc(80% - 30px )!important;
+      height: calc(100% - 30px)!important;
+      transform: translateX(-50%)!important;
+      transition: 2s!important;
+      border-top-right-radius: 5px!important;
+      border-top-left-radius: 5px!important;
+    }
+  }
+  .iphone{
+    top: 25%!important;
+    right: 50% !important;
+    transform: translateX(+50%)!important;
+  }
+  .ipad {
+    top:25%!important;
+    right: 0!important;
+    width: 100%!important;
+    height: auto!important;
+    img {
+      width: 100%!important;
+      padding: 0 28%!important;
+    }
+    .imgBX{
+      top: 3%!important;
+      left: 50%!important;
+      width: 41%!important;
+      height: calc(100% - 7%)!important;
+      transform: translateX(-50%)!important;
+      transition: 2s!important;
+    }
+  }
+}

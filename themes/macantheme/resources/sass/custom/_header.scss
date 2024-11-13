@@ -9,57 +9,6 @@ main {
   top: 0;
 }
 
-.single-post, .blog {
-  .position-custom {
-    background-color: #74489d;
-    position: fixed !important;
-    left: 0 !important;
-    right: 0 !important;
-  }
-}
-
-//progress bar
-.blog-progress {
-  visibility: hidden;
-  opacity: 0;
-  @extend .lazy;
-}
-
-.blog-progress.show {
-  visibility: visible;
-  opacity: 1;
-}
-
-.scrolled .blog-progress {
-  top: 55px;
-}
-
-progress {
-  height: 0.6rem;
-  background: #41af78;
-}
-
-progress {
-  color: lightblue;
-}
-
-progress::-moz-progress-bar {
-  background: lightblue;
-}
-
-progress::-webkit-progress-value {
-  background: #41af78;
-}
-
-progress::-webkit-progress-bar {
-  background: $success;
-}
-
-//mobile menu
-@media only screen and (max-width: 992px) {
-
-}
-
 .modal-dialog {
   pointer-events: auto !important;
 }
@@ -174,11 +123,6 @@ progress::-webkit-progress-bar {
 
 .menu ul ul {
   display: none;
-  //position: absolute;
-  //top: 40px;
-  //left: 0;
-  //right: 0;
-
 }
 
 .hover-text:hover,
@@ -191,7 +135,6 @@ progress::-webkit-progress-bar {
 }
 .back-button {
   display: block;
-  padding: 10px;
   cursor: pointer;
   text-decoration: none;
   transition: background-color 0.3s ease;

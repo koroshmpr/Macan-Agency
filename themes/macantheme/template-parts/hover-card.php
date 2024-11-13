@@ -1,11 +1,11 @@
 <?php
-$url = $_SERVER["REQUEST_URI"];
-$slugEN = strpos($url, '/en/');
+global $lan;
+$lan = apply_filters('wpml_current_language', NULL);
 $category_detail = get_the_terms(get_the_ID(), 'portfolio_categories');
 
 if ($category_detail[0]->term_id == 18 && is_post_type_archive('portfolio')) {
     $ratio = 'ratio-1x1 ratio';
-} elseif ($category_detail[0]->term_id == ($slugEN ? 31 : 17) && is_post_type_archive('portfolio')) {
+} elseif ($category_detail[0]->term_id == ($lan == 'en' ? 31 : 17) && is_post_type_archive('portfolio')) {
     $ratio = 'ratio-1x1 ratio';
 } else {
     $ratio = 'ratio-16x9 ratio';
@@ -29,17 +29,14 @@ if ($category_detail[0]->term_id == 18 && is_post_type_archive('portfolio')) {
 
     </div>
     <div class="direction-aware-hover__content position-absolute start-0 end-0 p-0 end-0 w-100 h-100 d-flex justify-content-center align-items-center flex-column">
-        <a href="<?php echo get_permalink(); ?>">
-            <p class="text-center fs-5">
+        <a class="text-center fs-5" href="<?php echo get_permalink(); ?>">
                 <?php the_title(); ?>
-            </p>
         </a>
         <span class="small">
              <?php foreach ($category_detail as $term) { ?>
                  <a href="#" data-category-id="<?php echo $term->term_taxonomy_id; ?>" class="btn-success categoryClick">
                      <?php echo $term->name; ?>
                  </a>
-
              <?php } ?>
         </span>
     </div>

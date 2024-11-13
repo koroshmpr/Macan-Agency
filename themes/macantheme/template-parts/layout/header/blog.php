@@ -16,7 +16,7 @@ global $lan;
                 'depth' => 2,
             ));
             ?>
-            <button class="bg-transparent border-0 btn <?= $lan == 'en' ? 'pe-5 ms-auto' : 'ps-5 me-auto'; ?>"
+            <button class="bg-transparent text-white border-0 btn <?= $lan == 'en' ? 'pe-5 ms-auto' : 'ps-5 me-auto'; ?>"
                     type="button"
                     data-bs-toggle="modal"
                     aria-label="Open Search Modal"
@@ -24,7 +24,9 @@ global $lan;
                     aria-controls="searchModal"
                     tabindex="0"
                     style="z-index: 1000">
-                <i class="bi bi-search text-white fs-5"></i>
+                <svg width="30" height="30" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                </svg>
             </button>
 
             <div class=" z-top text-center py-2 d-flex gap-2 ">

@@ -1,9 +1,7 @@
 </main>
 <?php
 if (is_singular('post') || is_home()) { ?>
-    <footer>
         <?php get_template_part('template-parts/layout/footer/blog'); ?>
-    </footer>
 <?php } ?>
 <?php if (!is_page_template() == 'landing'): ?>
     <?php if (is_singular('portfolio')): ?>
@@ -125,6 +123,16 @@ if (is_singular('post') || is_home()) { ?>
     </div>
 <?php endif; ?>
 <?php get_template_part('template-parts/layout/backToTop'); ?>
+<?php
+global $lan;
+$lan = apply_filters('wpml_current_language', NULL);
+if (!is_singular('portfolio') && is_front_page() && $lan == 'en') {
+    // Load template part for domain.com/en
+    get_template_part('template-parts/preload/en');
+} elseif (!is_singular('portfolio') && $lan == 'fa') {
+    get_template_part('template-parts/preload/fa');
+}
+?>
 <?php wp_footer(); ?>
 </body>
 </html>

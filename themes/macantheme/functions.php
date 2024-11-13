@@ -12,10 +12,9 @@ function theme_scripts()
     $url = $_SERVER["REQUEST_URI"];
     $slugEN = strpos($url, 'en/') !== false;
     //    <!-- Icons -->
-    wp_enqueue_style('bootstrap-icons', get_template_directory_uri() . '/public/fonts/bootstrap/bootstrap-icons.css');
+//    wp_enqueue_style('bootstrap-icons', get_template_directory_uri() . '/public/fonts/bootstrap/bootstrap-icons.css');
     wp_enqueue_style('custom', get_stylesheet_directory_uri() . '/public/css/custom.css', array());
     wp_enqueue_script('custom-js', get_template_directory_uri() . '/public/js/custom-js.js', array(), null, true);
-//    wp_enqueue_style('custom-style', get_template_directory_uri() . '/public/css/bootstrap-icons.css');
     if ($lan != 'en') {
         wp_enqueue_style('font', get_template_directory_uri() . '/public/fonts/YekanBakh/fontface.css', array());
     }
@@ -50,6 +49,7 @@ function theme_scripts()
     }
     if (is_singular('post')) {
         wp_enqueue_script('single-blog', get_template_directory_uri() . '/public/js/single-blog/app.js', '1.0.0', true);
+        wp_enqueue_style('single-post', get_stylesheet_directory_uri() . '/public/css/single-post.css', array());
     }
     if (is_page_template() == 'landing') {
         wp_enqueue_script('landing', get_template_directory_uri() . '/public/js/landing.js', '1.0.0', true);
