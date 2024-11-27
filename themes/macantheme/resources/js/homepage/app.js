@@ -1,9 +1,7 @@
-import $ from "jquery";
+// import $ from "jquery";
 import 'swiper/css';
 import Swiper from 'swiper/bundle';
 import 'swiper/css/bundle';
-
-
 
 function homeSwiper() {
     let names = [];

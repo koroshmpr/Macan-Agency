@@ -14,7 +14,7 @@ if (get_field('image_columns') == 'col-12') {
     $col_class = 'col-md-4 col-12';
 }
 if (have_rows('gallery')): ?>
-    <ul class="slides row justify-content-center list-unstyled g-1">
+    <ul class="slides row justify-content-center px-0 list-unstyled g-1">
         <?php $i = 0;
         while (have_rows('gallery')): the_row();
             $i++;
@@ -30,7 +30,7 @@ if (have_rows('gallery')): ?>
                        data-bs-toggle="modal">
                         <div class="<?= $ratioClass; ?> ratio">
                             <img class="object-fit" src="<?= esc_url( $thumb[0] ); ?>"
-                                 alt="<?= $image['alt'] ?>">
+                                 alt="<?= !empty($image['alt']) ? $image['alt'] : get_the_title(); ?>">
                             <div class="position-absolute w-100 h-100 start-0 top-0 d-flex justify-content-center align-items-center lazy card-overlay fs-5">
                                 <i class="bi bi-eye-fill"></i>
                             </div>

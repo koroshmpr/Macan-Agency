@@ -52,7 +52,7 @@ if (have_rows('section_2')):
             </div>
             <div class="col-lg-5 position-absolute bottom-0 <?= $lan == 'en' ? 'start-0' : 'end-0'; ?> custom-opacity-50" data-aos="fade-up" data-aos-duration="3000" data-aos-disable>
                 <?php if ($image){ ?>
-                    <img class="img-fluid" width="500" height="700"
+                    <img class="img-fluid no-lazy" width="500" height="700"
                     <?= $lan == 'en' ? 'style="transform:rotateY(180deg)"' : '' ; ?>
                          src="<?php echo esc_url($image['url']); ?>"
                          alt="<?php echo $image['alt']; ?>"

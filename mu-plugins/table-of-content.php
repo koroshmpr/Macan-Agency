@@ -76,7 +76,7 @@ function parse_toc($headings, $index, $recursive_counter)
     if (isset($current_element["classes"]) && $current_element["classes"] && in_array("toc-bold", $current_element["classes"])) {
         echo $name;
     } else {
-        echo "<a class='text-decoration-none fs-6' rel='noindex' href='#" . $id . "'>" . $name . "</a>";
+        echo "<a class='text-decoration-none fs-6' rel='noindex' data-scroll-to='" . $id . "' href='javascript:void(0);'>" . $name . "</a>";
     }
     if ($next_element && intval($next_element["tag"]) > $tag) {
         parse_toc($headings, $index + 1, $recursive_counter + 1);
@@ -152,3 +152,19 @@ function toc_shortcode($atts)
 add_shortcode('TOC', 'toc_shortcode');
 
 //[TOC from_tag="2" to_tag="3"]
+?>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        document.querySelectorAll('[data-scroll-to]').forEach(function (link) {
+            link.addEventListener('click', function (event) {
+                const targetId = this.getAttribute('data-scroll-to');
+                const targetElement = document.getElementById(targetId);
+
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    });
+</script>
+<?php

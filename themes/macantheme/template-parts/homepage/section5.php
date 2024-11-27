@@ -14,7 +14,7 @@ if (have_rows('section_5')):
                 <div class="row px-lg-0 mx-lg-0 justify-content-lg-between justify-content-center">
                     <div class="col-lg-5">
                         <img data-aos="fade-up" data-aos-duration="3000" data-aos-disable
-                             class="position-absolute bottom-0 <?= $lan == 'en' ? 'end-0' : 'start-0'; ?> w-75 section5"
+                             class="no-lazy position-absolute bottom-0 <?= $lan == 'en' ? 'end-0' : 'start-0'; ?> w-75 section5"
                              alt="<?php echo $image['alt']; ?>"
                              title="<?php echo $image['alt']; ?>"
                              src="<?php echo esc_url($image['url']); ?>">
@@ -37,9 +37,11 @@ if (have_rows('section_5')):
                                         <?php
                                         $client_image = get_field('img_class', $client);
                                         $client_attr = get_field('client_attr', $client);
+                                        $position = get_field('client_position', $client);
                                         if (!empty($client_attr)): ?>
-                                            <img class="<?= $client_image; ?>" width="100" height="100"
+                                            <img class="customerImg <?= $client_image; ?>" width="100" height="100"
                                                  src="<?php echo $client_attr; ?>"
+                                                 style="background-position: <?= $position;?>"
                                                  alt="<?php echo get_the_title($client); ?>"/>
                                         <?php endif; ?>
                                     </div>

@@ -2,16 +2,11 @@ require('./bootstrap');
 import Search from './global/search';
 import $ from "jquery";
 import AOS from 'aos';
-import 'aos/dist/aos.css';
+// import 'aos/dist/aos.css';
 import Masonry from 'masonry-layout';
 import imagesLoaded from 'imagesloaded';
 
 $(document).ready(function () {
-
-    // Hide preloader when entering the page
-    setTimeout(function () {
-        $('#preloader').fadeOut('slow');
-    }, 2400);
     // active tabs from card category inside
     $('.categoryClick').click(function (e) {
         e.preventDefault();

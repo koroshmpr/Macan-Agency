@@ -1,4 +1,4 @@
-@import "variables";
+@use "variables";
 //progress bar
 .blog-progress {
   visibility: hidden;
@@ -32,11 +32,11 @@ progress::-webkit-progress-value {
 }
 
 progress::-webkit-progress-bar {
-  background: $success;
+  background: variables.$success;
 }
 .sidebar-container {
   a {
-    color: $danger;
+    color: variables.$danger;
   }
   ul,ol{
     list-style: none!important;
@@ -55,7 +55,7 @@ progress::-webkit-progress-bar {
   }
 
   .active-item {
-    color: $danger;
+    color: variables.$danger;
   }
 }
 
@@ -128,7 +128,7 @@ ul.pagination {
   }
   blockquote {
     padding : 2rem;
-    border-right: 5px solid $danger;
+    border-right: 5px solid variables.$danger;
     margin: 1rem 0;
     background: #e3e0e0;
     color: black;
@@ -147,7 +147,7 @@ ul.pagination {
     content: '';
     width: 20px;
     height: 20px;
-    background-color: $danger;
+    background-color: variables.$danger;
     position: relative;
     display: inline-block;
     margin-right: 10px;
@@ -170,7 +170,7 @@ ul.pagination {
     padding-right: 0!important;
   }
   .wpd-second-button, .wpd-prim-button , .wc_comm_submit , input[type=text]{
-    font-family: 'Yekan';
+    font-family: 'Yekan', serif;
   }
   .wpd-form .wpd-textarea-wrap {
     flex-basis: 100% !important;
@@ -194,8 +194,14 @@ ul.pagination {
     background-color: transparent !important
   }
 }
-.single-post .content a {
-  font-weight: 600!important;
+.single-post .content {
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  a {
+    font-weight: 600 !important;
+  }
 }
 
 //list styles

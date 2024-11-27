@@ -1,4 +1,4 @@
-<div class="vh-100 vw-100 position-fixed top-0 start-0 bg-white" style="z-index: 10000000000;" id="preloader">
+<div aria-label="preloader" aria-hidden="true" class="vh-100 vw-100 position-fixed top-0 start-0 bg-white" style="z-index: 10000000000;" id="preloader">
     <div class="container h-100 w-100">
         <div class="row h-100 align-content-center justify-content-center">
             <svg class="px-0" style="width: 250px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 141.73 37.65">
@@ -25,15 +25,15 @@
                         <g style="clip-path: url(#clipPatch)">
                             <polygon data-aos="fade-down" data-aos-duration="1300" data-aos-delay="900" class="cls-2"
                                      points="122.95 13.21 128.57 13.21 128.57 18.82 122.95 18.82 122.95 13.21 122.95 13.21"/>
-                            <polygon data-aos="fade-right" data-aos-duration="1200" data-aos-delay="700" class="cls-2"
+                            <polygon data-aos="fade-left" data-aos-duration="1200" data-aos-delay="700" class="cls-2"
                                      points="117.33 18.82 122.95 18.82 122.95 24.44 117.33 24.44 117.33 18.82 117.33 18.82"/>
-                            <polygon data-aos="fade-right" data-aos-duration="1300" data-aos-delay="300" class="cls-2"
+                            <polygon data-aos="fade-left" data-aos-duration="1300" data-aos-delay="300" class="cls-2"
                                      points="111.71 24.44 117.33 24.44 117.33 30.06 111.71 30.06 111.71 24.44 111.71 24.44"/>
-                            <polygon data-aos="fade-right" data-aos-duration="1300" data-aos-delay="500" class="cls-2"
+                            <polygon data-aos="fade-left" data-aos-duration="1300" data-aos-delay="500" class="cls-2"
                                      points="111.71 13.21 117.33 13.21 117.33 18.82 111.71 18.82 111.71 13.21 111.71 13.21"/>
                             <polygon data-aos="fade-down" data-aos-duration="1300" data-aos-delay="300" class="cls-2"
                                      points="128.57 7.59 134.19 7.59 134.19 13.21 128.57 13.21 128.57 7.59 128.57 7.59"/>
-                            <polygon data-aos="fade-left" data-aos-duration="1300" data-aos-delay="1100" class="cls-2"
+                            <polygon data-aos="fade-right" data-aos-duration="1300" data-aos-delay="1100" class="cls-2"
                                      points="128.57 18.82 134.19 18.82 134.19 24.44 128.57 24.44 128.57 18.82 128.57 18.82"/>
                         </g>
                         <g data-aos="fade-down" data-aos-duration="1500">
@@ -53,3 +53,8 @@
         </div>
     </div>
 </div>
+<script>
+    setTimeout(function () {
+        jQuery('#preloader').fadeOut('slow');
+    }, 2400);
+</script>

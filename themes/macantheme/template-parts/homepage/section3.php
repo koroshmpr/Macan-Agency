@@ -15,10 +15,10 @@ if (have_rows('section_3')):
                 style="background-color: <?php echo esc_attr($color); ?>"
                 data-name="<?= $tab_name; ?>">
             <div class="col-lg-5">
-                <img data-aos="<?= $lan == 'en' ? 'fade-up-right' : 'fade-up-left'; ?>" data-aos-duration="3000"
+                <img data-aos="<?= $lan == 'en' ? 'fade-up-left' : 'fade-up-right'; ?>" data-aos-duration="3000"
                      data-aos-disable
                     <?= $lan == 'en' ? 'style="transform:rotateY(180deg)"' : '' ; ?>
-                     class="position-absolute bottom-0 <?= $lan == 'en' ? 'end-0' : 'start-0'; ?> w-75 section3"
+                     class="position-absolute no-lazy bottom-0 <?= $lan == 'en' ? 'end-0' : 'start-0'; ?> w-75 section3"
                      src="<?php echo esc_url($image['url']); ?>"
                      alt="<?php echo $image['alt']; ?>"
                      title="<?php echo $image['alt']; ?>"

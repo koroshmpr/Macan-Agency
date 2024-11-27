@@ -49,8 +49,8 @@ if (have_rows('section_4')):
                         </div>
                     </div>
                     <div class="col-lg-5">
-                        <img data-aos="fade-up-right" data-aos-duration="3000" data-aos-disable
-                             class="position-absolute bottom-0 <?= $lan == 'en' ? 'start-0' : 'end-0'; ?> w-75 section4"
+                        <img data-aos="fade-up-left" data-aos-duration="3000" data-aos-disable
+                             class="position-absolute no-lazy bottom-0 <?= $lan == 'en' ? 'start-0' : 'end-0'; ?> w-75 section4"
                             <?= $lan == 'en' ? 'style="transform:rotateY(180deg)"' : '' ; ?>
                              alt="<?php echo $image['alt']; ?>"
                              title="<?php echo $image['alt']; ?>"

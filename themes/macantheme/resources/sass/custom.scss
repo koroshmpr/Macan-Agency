@@ -3,7 +3,7 @@
 //custom classes
 @import "custom/variables";
 @import "extra-style";
-
+@import '../../node_modules/aos/dist/aos';
 // Bootstrap
 @import 'modules/bootstrap';
 
@@ -27,7 +27,7 @@
 // rev slider & formidable
 #rev_slider_1_1_wrapper *,
 #rev_slider_19_1_wrapper * {
-  font-family: 'Yekan-en', 'Yekan'!important;
+  font-family: 'Yekan-en', 'Yekan', serif !important;
 }
 .single-services rs-slide h1,
 .single-services rs-slide h2{
@@ -44,8 +44,7 @@
 //more link effect
 
 .MoreLink {
-  &:before {
-    right: 0;
+  &:before , &:after{
     bottom: auto;
     top: -5px;
     content: " ";
@@ -53,18 +52,18 @@
     position: absolute;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
+    border: 0.5px solid rgba(255, 255, 255, 0);
+    -webkit-transition: all 280ms ease-in-out;
+    -o-transition: all 280ms ease-in-out;
+    transition: all 280ms ease-in-out;
+    width: 0;
   }
-
+  &:before {
+    right: 0;
+  }
   &:after {
     left: 0;
-    bottom: -5px;
-    content: " ";
-    display: block;
-    position: absolute;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
   }
-
   &:hover:after, &:hover:before {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
@@ -75,19 +74,8 @@
     -moz-transition: width 350ms ease-in-out;
     width: 100%;
   }
-
-  &:after, &:before {
-    border: 0.5px solid rgba(255, 255, 255, 0);
-    -webkit-transition: all 280ms ease-in-out;
-    -o-transition: all 280ms ease-in-out;
-    transition: all 280ms ease-in-out;
-    width: 0;
-  }
 }
-
 //hover direction
-
-
 .direction-aware-hover {
   *:hover ~ .direction-aware-hover__content {
     transition: opacity 0s,

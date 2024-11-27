@@ -22,99 +22,19 @@
 .iconsax svg [fill] {
   fill: var(--Iconsax-Color);
 }
-
-.bmi-logo-macanagencyclient, .barbican-logo-macanagencyclient, .bsina-logo-macanagencyclient, .damavand-logo-macanagencyclient, .danone-logo-macanagencyclient,
-.dey-logo-macanagencyclient, .firepower-logo-macanagencyclient, .huawei-logo-macanagencyclient, .irancell-logo-macanagencyclient, .lightblue-logo-macanagencyclient,
-.lina-logo-macanagencyclient, .mehriran-logo-macanagencyclient, .mellal-logo-macanagencyclient, .mofid-logo-macanagencyclient, .oghabhalva-logo-macanagencyclient,
-.qatarair-logo-macanagencyclient, .rani-logo-macanagencyclient, .sunnyness-logo-macanagencyclient, .kargozarisaman-logo-macanagencyclient, .saman-logo-macanagencyclient {
+.customerImg {
   max-width: 100%;
   background-size: 100%;
-  background-image: url('https://macan.agency/wp-content/uploads/2024/09/macanClient-110-v2.png');
   width: 110px;
   margin: 0 auto;
   display: block;
 }
-
-.bmi-logo-macanagencyclient {
-  background-position: 0 0%;
+.bmi-logo-macanagencyclient, .barbican-logo-macanagencyclient, .bsina-logo-macanagencyclient, .damavand-logo-macanagencyclient, .danone-logo-macanagencyclient,
+.dey-logo-macanagencyclient, .firepower-logo-macanagencyclient, .huawei-logo-macanagencyclient, .irancell-logo-macanagencyclient, .lightblue-logo-macanagencyclient,
+.lina-logo-macanagencyclient, .mehriran-logo-macanagencyclient, .mellal-logo-macanagencyclient, .mofid-logo-macanagencyclient, .oghabhalva-logo-macanagencyclient,
+.qatarair-logo-macanagencyclient, .rani-logo-macanagencyclient, .sunnyness-logo-macanagencyclient, .kargozarisaman-logo-macanagencyclient, .saman-logo-macanagencyclient {
+  background-image: url('https://macan.agency/wp-content/uploads/2024/09/macanClient-110-v2.png');
 }
-
-.barbican-logo-macanagencyclient {
-  background-position: 0 5.263158%;
-}
-
-.bsina-logo-macanagencyclient {
-  background-position: 0 10.526316%;
-}
-
-.damavand-logo-macanagencyclient {
-  background-position: 0 15.789474%;
-}
-
-.danone-logo-macanagencyclient {
-  background-position: 0 21.052632%;
-}
-
-.dey-logo-macanagencyclient {
-  background-position: 0 26.315789%;
-}
-
-.firepower-logo-macanagencyclient {
-  background-position: 0 31.578947%;
-}
-
-.huawei-logo-macanagencyclient {
-  background-position: 0 36.842105%;
-}
-
-.irancell-logo-macanagencyclient {
-  background-position: 0 42.105263%;
-}
-
-.lightblue-logo-macanagencyclient {
-  background-position: 0 47.368421%;
-}
-
-.lina-logo-macanagencyclient {
-  background-position: 0 52.631579%;
-}
-
-.mehriran-logo-macanagencyclient {
-  background-position: 0 57.894737%;
-}
-
-.mellal-logo-macanagencyclient {
-  background-position: 0 63.157895%;
-}
-
-.mofid-logo-macanagencyclient {
-  background-position: 0 68.421053%;
-}
-
-.oghabhalva-logo-macanagencyclient {
-  background-position: 0 73.684211%;
-}
-
-.qatarair-logo-macanagencyclient {
-  background-position: 0 78.947368%;
-}
-
-.rani-logo-macanagencyclient {
-  background-position: 0 84.210526%;
-}
-
-.sunnyness-logo-macanagencyclient {
-  background-position: 0 89.473684%;
-}
-
-.kargozarisaman-logo-macanagencyclient {
-  background-position: 0 94.736842%;
-}
-
-.saman-logo-macanagencyclient {
-  background-position: 0 100%;
-}
-
 .tejaratbank-logo-macanagencyclient,
 .vimto-logo-macanagencyclient,
 .uniliver-logo-macanagencyclient,
@@ -124,140 +44,216 @@
 .esalat-logo-macanagencyclient,
 .kalleh-logo-macanagencyclient,
 .tolips-logo-macanagencyclient {
-  max-width: 100%;
-  background-size: 100%;
   background-image: url('https://macan.agency/wp-content/uploads/2024/08/macanClient-responsive5-1.png');
-  width: 110px;
-  margin: 0 auto;
   display: block;
 }
 
-.tejaratbank-logo-macanagencyclient {
-  background-position: 0 12.5%;
-}
-.digikala-logo-macanagencyclient {
-  background-position: 0 25%;
-}
-.esalat-logo-macanagencyclient {
-  background-position: 0 37.5%;
-}
-.kalleh-logo-macanagencyclient {
-  background-position: 0 50%;
-}
-.tolips-logo-macanagencyclient {
-  background-position: 0 62.5%;
-}
-.vimto-logo-macanagencyclient {
-  background-position: 0 87.5%;
-}
-.uniliver-logo-macanagencyclient {
-  background-position: 0 75%
-}
-.zarmacaron-logo-macanagencyclient {
-  background-position: 0 100%;
-}
-.pasargad-logo-macanagencyclient {
-  background-position: 0 0%;
-}
+//.bmi-logo-macanagencyclient {
+//  background-position: 0 0%;
+//}
+//
+//.barbican-logo-macanagencyclient {
+//  background-position: 0 5.263158%;
+//}
+//
+//.bsina-logo-macanagencyclient {
+//  background-position: 0 10.526316%;
+//}
+//
+//.damavand-logo-macanagencyclient {
+//  background-position: 0 15.789474%;
+//}
+//
+//.danone-logo-macanagencyclient {
+//  background-position: 0 21.052632%;
+//}
+//
+//.dey-logo-macanagencyclient {
+//  background-position: 0 26.315789%;
+//}
+//
+//.firepower-logo-macanagencyclient {
+//  background-position: 0 31.578947%;
+//}
+//
+//.huawei-logo-macanagencyclient {
+//  background-position: 0 36.842105%;
+//}
+//
+//.irancell-logo-macanagencyclient {
+//  background-position: 0 42.105263%;
+//}
+//
+//.lightblue-logo-macanagencyclient {
+//  background-position: 0 47.368421%;
+//}
+//
+//.lina-logo-macanagencyclient {
+//  background-position: 0 52.631579%;
+//}
+//
+//.mehriran-logo-macanagencyclient {
+//  background-position: 0 57.894737%;
+//}
+//
+//.mellal-logo-macanagencyclient {
+//  background-position: 0 63.157895%;
+//}
+//
+//.mofid-logo-macanagencyclient {
+//  background-position: 0 68.421053%;
+//}
+//
+//.oghabhalva-logo-macanagencyclient {
+//  background-position: 0 73.684211%;
+//}
+//
+//.qatarair-logo-macanagencyclient {
+//  background-position: 0 78.947368%;
+//}
+//
+//.rani-logo-macanagencyclient {
+//  background-position: 0 84.210526%;
+//}
+//
+//.sunnyness-logo-macanagencyclient {
+//  background-position: 0 89.473684%;
+//}
+//
+//.kargozarisaman-logo-macanagencyclient {
+//  background-position: 0 94.736842%;
+//}
+//
+//.saman-logo-macanagencyclient {
+//  background-position: 0 100%;
+//}
+//
+//.tejaratbank-logo-macanagencyclient {
+//  background-position: 0 12.5%;
+//}
+//.digikala-logo-macanagencyclient {
+//  background-position: 0 25%;
+//}
+//.esalat-logo-macanagencyclient {
+//  background-position: 0 37.5%;
+//}
+//.kalleh-logo-macanagencyclient {
+//  background-position: 0 50%;
+//}
+//.tolips-logo-macanagencyclient {
+//  background-position: 0 62.5%;
+//}
+//.vimto-logo-macanagencyclient {
+//  background-position: 0 87.5%;
+//}
+//.uniliver-logo-macanagencyclient {
+//  background-position: 0 75%;
+//}
+//.zarmacaron-logo-macanagencyclient {
+//  background-position: 0 100%;
+//}
+//.pasargad-logo-macanagencyclient {
+//  background-position: 0 0%;
+//}
 
-.client-mobile .byd-logo,
-.client-mobile .danet-logo,
-.client-mobile .danet-pop-logo,
-.client-mobile .henkel-logo,
-.client-mobile .honor-logo,
-.client-mobile .huawei-logo,
-.client-mobile .iranzamin-logo,
-.client-mobile .logo-aftab,
-.client-mobile .logo-lipton,
-.client-mobile .logo-zar,
-.client-mobile .maat-logo-img,
-.client-mobile .mg-logo,
-.client-mobile .nilmoti-logo,
-.client-mobile .oghabhalva-logo,
-.client-mobile .pakhshoghab-logo,
-.client-mobile .pril-logo,
-.client-mobile .rani-logo,
-.client-mobile .unilever {
-  display: inline-block;
-  background: url('https://macan.agency/wp-content/uploads/2018/05/clients-macan-logo.png') no-repeat;
-  overflow: hidden;
-  text-indent: -9999px;
-  text-align: center;
-  width: 80px;
-  height: 80px
-}
-
-.client-mobile .byd-logo {
-  background-position: 0 0;
-}
-
-.client-mobile .danet-logo {
-  background-position: -80px 0;
-}
-
-.client-mobile .danet-pop-logo {
-  background-position: -160px 0;
-}
-
-.client-mobile .henkel-logo {
-  background-position: -240px 0;
-}
-
-.client-mobile .honor-logo {
-  background-position: 0 -80px;
-}
-
-.client-mobile .huawei-logo {
-  background-position: -80px -80px;
-}
-
-.client-mobile .iranzamin-logo {
-  background-position: -160px -80px;
-}
-
-.client-mobile .logo-aftab {
-  background-position: -240px -80px;
-}
-
-.client-mobile .logo-lipton {
-  background-position: 0 -160px;
-}
-
-.client-mobile .logo-zar {
-  background-position: -80px -160px;
-}
-
-.client-mobile .maat-logo-img {
-  background-position: -160px -160px;
-}
-
-.client-mobile .mg-logo {
-  background-position: -240px -160px;
-}
-
-.client-mobile .nilmoti-logo {
-  background-position: 0 -240px;
-}
-
-.client-mobile .oghabhalva-logo {
-  background-position: -80px -240px;
-}
-
-.client-mobile .pakhshoghab-logo {
-  background-position: -160px -240px;
-}
-
-.client-mobile .pril-logo {
-  background-position: -240px -240px;
-}
-
-.client-mobile .rani-logo {
-  background-position: 0 -320px;
-}
-
-.client-mobile .unilever {
-  background-position: -80px -320px;
-}
+//.client-mobile .byd-logo,
+//.client-mobile .danet-logo,
+//.client-mobile .danet-pop-logo,
+//.client-mobile .henkel-logo,
+//.client-mobile .honor-logo,
+//.client-mobile .huawei-logo,
+//.client-mobile .iranzamin-logo,
+//.client-mobile .logo-aftab,
+//.client-mobile .logo-lipton,
+//.client-mobile .logo-zar,
+//.client-mobile .maat-logo-img,
+//.client-mobile .mg-logo,
+//.client-mobile .nilmoti-logo,
+//.client-mobile .oghabhalva-logo,
+//.client-mobile .pakhshoghab-logo,
+//.client-mobile .pril-logo,
+//.client-mobile .rani-logo,
+//.client-mobile .unilever {
+//  display: inline-block;
+//  background: url('https://macan.agency/wp-content/uploads/2018/05/clients-macan-logo.png') no-repeat;
+//  overflow: hidden;
+//  text-indent: -9999px;
+//  text-align: center;
+//  width: 80px;
+//  height: 80px
+//}
+//
+//.client-mobile .byd-logo {
+//  background-position: 0 0;
+//}
+//
+//.client-mobile .danet-logo {
+//  background-position: -80px 0;
+//}
+//
+//.client-mobile .danet-pop-logo {
+//  background-position: -160px 0;
+//}
+//
+//.client-mobile .henkel-logo {
+//  background-position: -240px 0;
+//}
+//
+//.client-mobile .honor-logo {
+//  background-position: 0 -80px;
+//}
+//
+//.client-mobile .huawei-logo {
+//  background-position: -80px -80px;
+//}
+//
+//.client-mobile .iranzamin-logo {
+//  background-position: -160px -80px;
+//}
+//
+//.client-mobile .logo-aftab {
+//  background-position: -240px -80px;
+//}
+//
+//.client-mobile .logo-lipton {
+//  background-position: 0 -160px;
+//}
+//
+//.client-mobile .logo-zar {
+//  background-position: -80px -160px;
+//}
+//
+//.client-mobile .maat-logo-img {
+//  background-position: -160px -160px;
+//}
+//
+//.client-mobile .mg-logo {
+//  background-position: -240px -160px;
+//}
+//
+//.client-mobile .nilmoti-logo {
+//  background-position: 0 -240px;
+//}
+//
+//.client-mobile .oghabhalva-logo {
+//  background-position: -80px -240px;
+//}
+//
+//.client-mobile .pakhshoghab-logo {
+//  background-position: -160px -240px;
+//}
+//
+//.client-mobile .pril-logo {
+//  background-position: -240px -240px;
+//}
+//
+//.client-mobile .rani-logo {
+//  background-position: 0 -320px;
+//}
+//
+//.client-mobile .unilever {
+//  background-position: -80px -320px;
+//}
 
 //swiper pagination
 .swiper-pagination-bullet {

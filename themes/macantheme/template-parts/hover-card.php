@@ -32,13 +32,13 @@ if ($category_detail[0]->term_id == 18 && is_post_type_archive('portfolio')) {
         <a class="text-center fs-5" href="<?php echo get_permalink(); ?>">
                 <?php the_title(); ?>
         </a>
-        <span class="small">
+        <div class="small">
              <?php foreach ($category_detail as $term) { ?>
-                 <a href="#" data-category-id="<?php echo $term->term_taxonomy_id; ?>" class="btn-success categoryClick">
+                 <p data-category-id="<?php echo $term->term_taxonomy_id; ?>" class="btn-success categoryClick">
                      <?php echo $term->name; ?>
-                 </a>
+                 </p>
              <?php } ?>
-        </span>
+        </div>
     </div>
 </div>
 

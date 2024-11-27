@@ -21,7 +21,7 @@ global $lan; ?>
 </div>
 <?php $count = count(get_field('gallery'));
 ?>
-<div class="<?= $count <= 3 ? 'col-lg-3 py-5' : 'col-md-5'; ?> mx-auto">
+<div class="<?= $count <= 3 ? 'col-11 col-md-3 py-5' : 'col-11 col-md-5'; ?> mx-auto">
     <?php
     get_template_part('template-parts/portfolio/gallery');
     ?>

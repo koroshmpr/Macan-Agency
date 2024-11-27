@@ -1,33 +1,20 @@
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
-    <meta name="keywords" content="<?= get_field('keywords', 'option'); ?>">
+    <?php
+    $focus_keyword = get_post_meta(get_the_ID(), 'rank_math_focus_keyword', true) ?? '';
+    $globalKeyword = get_field('keywords', 'option') ?? '';
+    ?>
+    <meta name="keywords" content="<?= $focus_keyword ?? $globalKeyword;?>">
     <meta name="author" content="<?= get_bloginfo('author'); ?>">
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-001CYNWEH4"></script>
-    <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "ohgfb8g5wh");
-</script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-        gtag('config', 'G-001CYNWEH4');
-    </script>
+    <?= get_field('scripts', 'option') ?? ''; ?>
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-<!-- Navbar STart -->
 <header class="justify-content-between d-flex">
     <?php
     if (is_singular('post') || is_home()) {

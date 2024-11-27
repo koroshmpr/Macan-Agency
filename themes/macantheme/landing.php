@@ -123,9 +123,11 @@ $titleClass = 'fw-bolder fs-3 text-white mb-5 text-lg-start text-center';
                                 <?php
                                 $client_image = get_field('img_class', $customer);
                                 $client_attr = get_field('client_attr', $customer);
+                                $position = get_field('client_position', $client);
                                 if (!empty($client_attr)): ?>
-                                    <img class="<?= $client_image; ?>" width="100" height="100"
+                                    <img class="customerImg <?= $client_image; ?>" width="100" height="100"
                                          src="<?php echo $client_attr; ?>"
+                                         style="background-position: <?= $position;?>"
                                          alt="<?php echo get_the_title($customer); ?>"/>
                                 <?php endif; ?>
                             </div>

@@ -2,7 +2,7 @@
 global $lan;
 $col_class = get_field('row_width') ?? '';
 ?>
-<div class="<?= $col_class; ?> py-5 text-center <?= $lan == 'en' ? 'lang-en' : ''; ?>">
+<div class="col-11 <?= $col_class; ?> py-5 text-center <?= $lan == 'en' ? 'lang-en' : ''; ?>">
     <?php
     get_template_part('template-parts/portfolio/gallery');
     ?>

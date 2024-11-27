@@ -1,6 +1,5 @@
 @include media-breakpoint-up(lg) {
   .scrolled .category-tabs {
-    //top:6.5% !important;
     padding: 0.5rem 0;
   }
   .category-content {
@@ -41,7 +40,6 @@
 @include media-breakpoint-down(lg) {
   .scrolled .category-tabs {
     padding: 0.7rem 0;
-    //top:8%;
   }
   .category-content {
     margin-top:15% ;
