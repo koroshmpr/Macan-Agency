@@ -228,6 +228,20 @@ while (have_posts()) :
             </div>
         </div>
     </section>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('[data-scroll-to]').forEach(function (link) {
+                link.addEventListener('click', function (event) {
+                    const targetId = this.getAttribute('data-scroll-to');
+                    const targetElement = document.getElementById(targetId);
+
+                    if (targetElement) {
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+        });
+    </script>
 <?php endwhile;
 wp_reset_query(); ?>
 <?php get_footer(); ?>

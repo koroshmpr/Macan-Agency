@@ -152,19 +152,3 @@ function toc_shortcode($atts)
 add_shortcode('TOC', 'toc_shortcode');
 
 //[TOC from_tag="2" to_tag="3"]
-?>
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        document.querySelectorAll('[data-scroll-to]').forEach(function (link) {
-            link.addEventListener('click', function (event) {
-                const targetId = this.getAttribute('data-scroll-to');
-                const targetElement = document.getElementById(targetId);
-
-                if (targetElement) {
-                    targetElement.scrollIntoView({ behavior: 'smooth' });
-                }
-            });
-        });
-    });
-</script>
-<?php
